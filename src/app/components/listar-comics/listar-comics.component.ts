@@ -1,16 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { VariablesService } from 'src/app/services/variables.service';
 
 @Component({
   selector: 'app-listar-comics',
   templateUrl: './listar-comics.component.html',
   styleUrls: ['./listar-comics.component.css']
 })
-export class ListarComicsComponent implements OnInit {
-  public numbers = Array(100).fill(4);
+export class ListarComicsComponent {
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(public variables: VariablesService) { }
 
 }
