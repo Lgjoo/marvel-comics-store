@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { VariablesService } from './services/variables.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'marvel-comic-store';
+  constructor(public variables: VariablesService) {}
 }
