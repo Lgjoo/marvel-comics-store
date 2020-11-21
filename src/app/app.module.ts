@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.component';
 import { ListarComicsComponent } from './components/listar-comics/listar-comics.component';
 import { ComicComponent } from './components/comic/comic.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ComicComponent } from './components/comic/comic.component';
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

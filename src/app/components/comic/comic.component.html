@@ -1,10 +1,14 @@
-<div class="comicArea p-3">
-    <div class="comicContainer py-5 px-2">
-        <div class="comicImageArea">
-            <img />
-        </div>
-        <div class="comicDetailsActions">
-            teste
-        </div>
+<div class="card m-3 comicContainer border-0">
+    <div class="row comicImageArea align-items-center">
+        <img class="col comicImage" [src]="comic.thumbnail.path+'.'+comic.thumbnail.extension"/>
     </div>
-</div>
+    <div class="col">
+      <div class="row justify-content-center comicTitleArea">
+        <h5 class="card-title text-center my-1">{{comic.title}}</h5>
+      </div>
+      <div class="row justify-content-around">
+        <a class="btn btn-outline-info mt-2">Detalhes</a>
+        <a class="btn btn-outline-danger mt-2">Comprar</a>
+      </div>
+    </div>
+  </div>
