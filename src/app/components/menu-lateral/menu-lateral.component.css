@@ -1,0 +1,21 @@
+.menuLateral {
+    transition: all 0.5s ease-in-out;
+    min-height: 100vh; /* @TODO: rever para preencher a tela */
+    min-width: 15em;
+}
+
+.direita {
+    margin-right: -15em;
+}
+
+.menuAberto.direita {
+    margin-right: 0em;
+}
+
+.esquerda {
+    margin-left: -15em;
+}
+
+.menuAberto.esquerda {
+    margin-left: 0em;
+}
