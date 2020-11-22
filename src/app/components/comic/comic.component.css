@@ -1,5 +1,5 @@
 .comicContainer {
-    max-width: 15vw;
+    width: 15vw;
     cursor: pointer;
 }
 
@@ -17,14 +17,25 @@
     height: 10vh;
 }
 
+.card-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 1em;
+    max-height: 3em;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
 @media only screen and (max-width: 540px) {
     .comicContainer {
-        max-width: 40vw;
+        width: 40vw;
     }
 }
 
 @media only screen and (min-width: 541px) and (max-width: 960px) {
     .comicContainer {
-        max-width: 25vw;
+        width: 25vw;
     }
 }

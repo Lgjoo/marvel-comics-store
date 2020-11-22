@@ -21,10 +21,10 @@ export class ComicsService {
 
   }
 
-  getComics(nome: string = '', offset: number = 0): Observable<{data: {results: Comic[]}}> {
+  getComics(titulo: string = '', offset: number = 0): Observable<{data: {results: Comic[]}}> {
     let url = this.comicsUrl;
-    if(nome.length > 0) {
-      url += 'nameStartsWith='+encodeURI(nome)+'&';
+    if(titulo.length > 0) {
+      url += 'titleStartsWith='+encodeURI(titulo)+'&';
     }
     if(offset != 0) {
       url += 'offset='+offset+'&';

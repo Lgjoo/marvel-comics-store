@@ -1,16 +1,19 @@
 <div class="container-fluid">
     <div class="row justify-content-around">
-        <ng-container *ngIf="variables.getCarregandoComics()">
-            <i class="fas fa-circle-notch fa-spin fa-7x vermelhoMarvel"></i>
+        <ng-container *ngIf="variables.getCarregandoComics(); else setComics();">
+            <i class="fas fa-circle-notch fa-spin fa-5x vermelhoMarvel"></i>
         </ng-container>
         <ng-container *ngIf="!variables.getCarregandoComics()">
-            <ng-container *ngIf="variables.getComics().length == 0">
+            <ng-container *ngIf="comics.length == 0">
                 <h3>Nenhuma HQ foi encontrada.</h3>
             </ng-container>
-            <ng-container *ngIf="variables.getComics().length > 0">
-                <ng-container  *ngFor="let comic of variables.getComics()">
+            <ng-container *ngIf="comics.length > 0">
+                <ng-container  *ngFor="let comic of comics">
                     <app-comic [comic]="comic"></app-comic>
                 </ng-container>
+                <div class="col-12 text-center mt-2" *ngIf="variables.getCarregandoMaisComics(); else setComics();">
+                    <i class="fas fa-circle-notch fa-spin fa-2x vermelhoMarvel"></i>
+                </div>
             </ng-container>
         </ng-container>
     </div>

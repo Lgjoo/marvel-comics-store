@@ -9,7 +9,9 @@ export class VariablesService {
   private menuBuscaAberto: boolean = false;
   private menuCarrinhoAberto: boolean = false;
   private carregandoComics: boolean = false;
+  private carregandoMaisComics: boolean = false;
   private comics: Array<Comic> = [];
+  private tituloBusca: string = '';
 
   constructor() { }
 
@@ -43,14 +45,29 @@ export class VariablesService {
 
   setComics(comics: Array<Comic>, novaConsulta: boolean = true): void {
     if (novaConsulta) {
-      this.comics = [];
       this.comics = comics;
     } else {
-      this.comics.concat(comics);
+      this.comics = this.comics.concat(comics);
     }
   }
 
   getPrintPrice(precos: Array<any>): string {
-    return formatCurrency(precos.find(preco => preco.type == 'printPrice').price || 0.0, 'en-us', '$ ');
+    return formatCurrency(precos.find(preco => preco.type == 'printPrice').price || 0.0, 'en-us', '$');
+  }
+
+  getCarregandoMaisComics(): boolean {
+    return this.carregandoMaisComics;
+  }
+
+  setCarregandoMaisComics(carregando: boolean): void {
+    this.carregandoMaisComics = carregando;
+  }
+
+  getTituloBusca(): string {
+    return this.tituloBusca;
+  }
+
+  setTituloBusca(titulo: string): void {
+    this.tituloBusca = titulo;
   }
 }
