@@ -9,6 +9,8 @@ import { ListarComicsComponent } from './components/listar-comics/listar-comics.
 import { ComicComponent } from './components/comic/comic.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DetalhesComponent } from './components/detalhes/detalhes.component';
+import { BuscaComponent } from './components/busca/busca.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { DetalhesComponent } from './components/detalhes/detalhes.component';
     MenuLateralComponent,
     ListarComicsComponent,
     ComicComponent,
-    DetalhesComponent
+    DetalhesComponent,
+    BuscaComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

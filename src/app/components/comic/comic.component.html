@@ -3,12 +3,17 @@
         <img class="col comicImage" [src]="comic.thumbnail.path+'.'+comic.thumbnail.extension"/>
     </div>
     <div class="col">
-      <div class="row justify-content-center comicTitleArea">
+      <div class="row justify-content-center align-items-center comicTitleArea">
         <h5 class="card-title text-center my-1">{{comic.title}}</h5>
       </div>
-      <div class="row justify-content-around">
-        <a class="btn btn-outline-info mt-2" (click)="abreDetalhes(comic);">Detalhes</a>
-        <a class="btn btn-outline-danger mt-2" (click)="insereCarrinho(comic);">Comprar</a>
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 text-center">
+          <a class="btn btn-outline-info mt-2" (click)="abreDetalhes(comic);">Detalhes</a>
+        </div>
+        <div class="col-lg-6 col-sm-12 text-center">
+          <a class="btn btn-outline-danger mt-2" [id]="'botaoComprarComic' + comic.id" (mouseover)="changeLabelBotaoComprar(true, $event)" (mouseout)="changeLabelBotaoComprar(false, $event)" 
+            (click)="insereCarrinho(comic);">{{variables.getPrintPrice(comic.prices)}}</a>
+        </div>
       </div>
     </div>
   </div>
