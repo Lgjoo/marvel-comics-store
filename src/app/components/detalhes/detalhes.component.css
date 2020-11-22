@@ -1,0 +1,23 @@
+.close {
+    cursor: pointer;
+}
+
+.comicImageArea {
+    max-height: 100%;
+}
+
+.comicImage {
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.listaDetalhes {
+    overflow-y: scroll;
+    max-height: 60vh;
+}
+
+.tituloDetalhe {
+    font-weight: 600;
+    padding-right: 1em;
+}

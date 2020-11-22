@@ -1,3 +1,4 @@
+import { formatCurrency } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Comic } from '../models/comic';
 
@@ -47,5 +48,9 @@ export class VariablesService {
     } else {
       this.comics.concat(comics);
     }
+  }
+
+  getPrintPrice(precos: Array<any>): string {
+    return formatCurrency(precos.find(preco => preco.type == 'printPrice').price || 0.0, 'en-us', '$ ');
   }
 }

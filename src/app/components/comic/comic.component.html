@@ -7,8 +7,8 @@
         <h5 class="card-title text-center my-1">{{comic.title}}</h5>
       </div>
       <div class="row justify-content-around">
-        <a class="btn btn-outline-info mt-2">Detalhes</a>
-        <a class="btn btn-outline-danger mt-2">Comprar</a>
+        <a class="btn btn-outline-info mt-2" (click)="abreDetalhes(comic);">Detalhes</a>
+        <a class="btn btn-outline-danger mt-2" (click)="insereCarrinho(comic);">Comprar</a>
       </div>
     </div>
   </div>
