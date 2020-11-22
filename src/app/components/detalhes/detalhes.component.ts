@@ -18,7 +18,7 @@ export class DetalhesComponent implements OnInit {
   }
 
   comprarComic() {
-    // insereCarrinho(this.comic);
+    this.variables.insereComicPedido(this.comic);
     this.activeModal.close();
   }
 

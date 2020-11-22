@@ -85,5 +85,8 @@ export interface Comic {
         collectionURI: string,
         items: Array<any>,
         returned: number
-    }
+    },
+    quantidade: number,
+    raro: boolean,
+    preco: number
 }

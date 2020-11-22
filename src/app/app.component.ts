@@ -11,10 +11,10 @@ export class AppComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
   onscroll(event) {
     let target = event.target.scrollingElement;
-    let posAtual = target.scrollTop + target.offsetHeight;
-    let maxScroll = target.scrollHeight;
-
-    if(posAtual = maxScroll && !this.variables.getCarregandoMaisComics()) {
+    let posAtual = target.scrollTop;
+    let maxScroll = target.scrollTopMax;
+    
+    if(posAtual > maxScroll * 0.9 && !this.variables.getCarregandoMaisComics()) {
       this.variables.setCarregandoMaisComics(true);
       this.comics.getComics(this.variables.getTituloBusca(), this.variables.getComics().length).subscribe(
         comics => {

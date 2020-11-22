@@ -8,7 +8,7 @@ import { VariablesService } from '../../services/variables.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private variables: VariablesService) {
+  constructor(public variables: VariablesService) {
 
   }
 

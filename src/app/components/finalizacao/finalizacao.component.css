@@ -1,0 +1,16 @@
+.listaComicsPedido {
+    max-height: 50vh;
+    overflow-y: scroll;
+    list-style: none;
+}
+
+.card-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 1em;
+    max-height: 3em;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
