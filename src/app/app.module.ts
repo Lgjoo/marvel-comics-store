@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DetalhesComponent } from './components/detalhes/detalhes.component';
 import { BuscaComponent } from './components/busca/busca.component';
 import { FormsModule } from '@angular/forms';
+import { FinalizacaoComponent } from './components/finalizacao/finalizacao.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     ListarComicsComponent,
     ComicComponent,
     DetalhesComponent,
-    BuscaComponent
+    BuscaComponent,
+    FinalizacaoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

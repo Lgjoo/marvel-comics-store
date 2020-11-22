@@ -18,6 +18,5 @@ export class ListarComicsComponent implements OnInit {
 
   setComics(): void {
     this.comics = this.variables.getComics();
-    console.log(this.variables.getComics());
   }
 }

@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col text-right p-2">
+            <h3 class="my-2">Seu pedido</h3>
+            <div class="listaComicsPedido p-0 m-0">
+                <div class="card mb-3" *ngFor="let comic of comics">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img [src]="comic.thumbnail.path+'.'+comic.thumbnail.extension" class="card-img">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title" [attr.title]="comic.title">{{comic.title}}</h5>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend" id="buttonMaisMenosQuantidade">
+                                        <button class="btn btn-outline-danger" type="button" (click)="mudaQuantidade(comic, comic.quantidade - 1)">-</button>
+                                    </div>
+                                    <input type="text" class="form-control text-right" placeholder="Quantidade" aria-label="Quantidade" aria-describedby="buttonMaisMenosQuantidade" disabled [ngModel]="comic.quantidade">
+                                    <div class="input-group-append" id="buttonMaisMenosQuantidade">
+                                        <button class="btn btn-outline-danger" type="button" (click)="mudaQuantidade(comic, comic.quantidade + 1)">+</button>
+                                    </div>
+                                </div>
+                                <h4>{{getPrecoTotal(comic, variables.getPrice(comic))}}</h4>
+                                <a class="btn btn-outline-danger py-1 px-2 border-0" (click)="variables.removeComicPedido(comic)">
+                                    <i class="fas fa-trash fa-md"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4 class="my-3">Total do pedido: {{getTotalPedido()}}</h4>
+            <button type="button" class="btn btn-danger" (click)="fazerCheckoutPedido()"><i class="fas fa-dollar-sign pr-2"></i>Checkout</button>
+        </div>
+    </div>
+</div>

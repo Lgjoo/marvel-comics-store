@@ -27,13 +27,13 @@ export class ComicComponent implements OnInit {
   }
 
   insereCarrinho(comic: Comic): void {
-    
+    this.variables.insereComicPedido(comic);
   }
 
   changeLabelBotaoComprar(mouseHover: boolean, event): void {
     document.getElementById(event.target.id).innerHTML = mouseHover 
       ? 'Comprar'
-      : this.variables.getPrintPrice(this.comic.prices);
+      : this.variables.getPrice(this.comic);
   }
 
 }

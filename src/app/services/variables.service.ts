@@ -12,6 +12,7 @@ export class VariablesService {
   private carregandoMaisComics: boolean = false;
   private comics: Array<Comic> = [];
   private tituloBusca: string = '';
+  private comicsPedido: Array<Comic> = [];
 
   constructor() { }
 
@@ -20,6 +21,9 @@ export class VariablesService {
   }
 
   setMenuBuscaAberto(aberto: boolean): void {
+    if(this.menuCarrinhoAberto && aberto) {
+      this.menuCarrinhoAberto = false;
+    }
     this.menuBuscaAberto = aberto;
   }
 
@@ -28,6 +32,9 @@ export class VariablesService {
   }
 
   setMenuCarrinhoAberto(aberto: boolean): void {
+    if(this.menuBuscaAberto && aberto) {
+      this.menuBuscaAberto = false;
+    }
     this.menuCarrinhoAberto = aberto;
   }
 
@@ -51,8 +58,8 @@ export class VariablesService {
     }
   }
 
-  getPrintPrice(precos: Array<any>): string {
-    return formatCurrency(precos.find(preco => preco.type == 'printPrice').price || 0.0, 'en-us', '$');
+  getPrice(comic: Comic): string {
+    return formatCurrency(comic.preco, 'en-us', '$');
   }
 
   getCarregandoMaisComics(): boolean {
@@ -69,5 +76,32 @@ export class VariablesService {
 
   setTituloBusca(titulo: string): void {
     this.tituloBusca = titulo;
+  }
+
+  getComicsPedido(): Array<any> {
+    return this.comicsPedido;
+  }
+
+  setComicsPedido(comics: Array<any>): void {
+    this.comicsPedido = comics;
+  }
+
+  insereComicPedido(comic: Comic): void {
+    let indexComic = this.comicsPedido.findIndex(comicPedido => comicPedido.id == comic.id);
+
+    if(indexComic > -1) {
+      this.comicsPedido[indexComic].quantidade++;
+    } else {
+      comic.quantidade = 1;
+      this.comicsPedido.push(comic);
+    }
+  }
+
+  removeComicPedido(comic: Comic): void {
+    let indexComic = this.comicsPedido.findIndex(comicPedido => comicPedido.id == comic.id);
+
+    if(indexComic > -1) {
+      this.comicsPedido.splice(indexComic, 1);
+    }
   }
 }

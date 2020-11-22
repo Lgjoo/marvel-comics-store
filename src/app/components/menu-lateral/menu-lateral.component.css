@@ -1,12 +1,16 @@
 .menuLateral {
     transition: all 0.5s ease-in-out;
-    min-height: 100vh; /* @TODO: rever para preencher a tela */
+    min-height: 100vh;
     height: 100%;
-    width: 15em;
+    width: 33vw;
+    position: fixed;
+    background-color: white;
+    z-index: 99;
 }
 
 .direita {
-    margin-right: -15em;
+    margin-right: -33vw;
+    right: 0;
 }
 
 .menuAberto.direita {
@@ -14,9 +18,38 @@
 }
 
 .esquerda {
-    margin-left: -15em;
+    margin-left: -33vw;
+    left: 0;
 }
 
 .menuAberto.esquerda {
     margin-left: 0em;
+}
+
+@media only screen and (max-width: 540px) {
+    .menuLateral {
+        width: 100vw;
+    }
+    
+    .direita {
+        margin-right: -100vw;
+    }
+    
+    .esquerda {
+        margin-left: -100vw;
+    }
+}
+
+@media only screen and (min-width: 541px) and (max-width: 960px) {
+    .menuLateral {
+        width: 66vw;
+    }
+    
+    .direita {
+        margin-right: -66vw;
+    }
+    
+    .esquerda {
+        margin-left: -66vw;
+    }
 }
