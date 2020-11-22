@@ -1,0 +1,30 @@
+<div class="modal-header align-items-center">
+    <h4 class="modal-title">{{comic.title}}</h4>
+    <a class="close" aria-label="Close" (click)="activeModal.dismiss()">
+        <i class="fas fa-times fa-lg"></i>
+    </a>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-4">
+            <div class="comicImageArea align-items-center">
+                <img class="col p-0 comicImage" [src]="comic.thumbnail.path+'.'+comic.thumbnail.extension"/>
+            </div>
+        </div>
+        <div class="col-8 listaDetalhes">
+            <p *ngIf="comic.issueNumber != null" class="text-justify"><span class="tituloDetalhe">Nº edição:</span>{{comic.issueNumber}}</p>
+            <p *ngIf="comic.description != null" class="text-justify"><span class="tituloDetalhe">Descrição:</span><span [innerHTML]="comic.description"></span></p>
+            <p *ngIf="comic.pageCount != null && comic.pageCount > 0" class="text-justify"><span class="tituloDetalhe">Nº páginas:</span>{{comic.pageCount}}</p>
+            <p *ngIf="comic.series != null" class="text-justify"><span class="tituloDetalhe">Série:</span>{{comic.series.name}}</p>
+            <p *ngIf="comic.collections.length > 0" class="text-justify"><span class="tituloDetalhe">Coleções:</span>{{comic.collections.join(', ')}}</p>
+            <p *ngIf="comic.creators.items.length > 0" class="text-justify"><span class="tituloDetalhe">Criadores:</span>{{getCriadores(comic.creators.items)}}</p>
+            <p *ngIf="comic.characters.items.length > 0" class="text-justify"><span class="tituloDetalhe">Personagens:</span>{{getPersonagens(comic.characters.items)}}</p>
+            <p *ngIf="comic.stories.items.length > 0" class="text-justify"><span class="tituloDetalhe">Histórias:</span>{{getHistorias(comic.stories.items)}}</p>
+            <p *ngIf="comic.events.items.length > 0" class="text-justify"><span class="tituloDetalhe">Eventos:</span>{{comic.events.items.join(', ')}}</p>
+        </div>
+    </div>
+</div>
+<div class="modal-footer align-items-center">
+    <h3 class="tituloDetalhe">{{variables.getPrintPrice(comic.prices)}}</h3>
+    <button type="button" class="btn btn-outline-danger" (click)="comprarComic()">Comprar</button>
+</div>

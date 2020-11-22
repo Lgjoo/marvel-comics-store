@@ -8,6 +8,7 @@ import { MenuLateralComponent } from './components/menu-lateral/menu-lateral.com
 import { ListarComicsComponent } from './components/listar-comics/listar-comics.component';
 import { ComicComponent } from './components/comic/comic.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DetalhesComponent } from './components/detalhes/detalhes.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     MenuLateralComponent,
     ListarComicsComponent,
-    ComicComponent
+    ComicComponent,
+    DetalhesComponent
   ],
   imports: [
     BrowserModule,
