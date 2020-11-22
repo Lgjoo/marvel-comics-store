@@ -1,7 +1,6 @@
 .listaComicsPedido {
     max-height: 50vh;
     overflow-y: scroll;
-    list-style: none;
 }
 
 .card-title {
@@ -13,4 +12,9 @@
     max-height: 3em;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+}
+
+.listaCuponsPedido {
+    max-height: 20vh;
+    overflow-y: scroll;
 }

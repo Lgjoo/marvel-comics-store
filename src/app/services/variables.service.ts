@@ -1,6 +1,8 @@
 import { formatCurrency } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { Comic } from '../models/comic';
+import { CuponsService } from './cupons.service';
+import { Cupom } from '../models/cupom';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +15,15 @@ export class VariablesService {
   private comics: Array<Comic> = [];
   private tituloBusca: string = '';
   private comicsPedido: Array<Comic> = [];
+  private cuponsDisponiveis: Array<Cupom> = [];
 
-  constructor() { }
+  constructor(public cupons: CuponsService) {
+    this.cupons.getCupons().subscribe(
+      cuponsImportados => {
+        this.cuponsDisponiveis = cuponsImportados.cupons;
+      }
+    );
+  }
 
   getMenuBuscaAberto(): boolean {
     return this.menuBuscaAberto;
@@ -103,5 +112,25 @@ export class VariablesService {
     if(indexComic > -1) {
       this.comicsPedido.splice(indexComic, 1);
     }
+  }
+
+  getCuponsDisponiveis(): Array<Cupom> {
+    let cuponsUtilizados: Array<Cupom> = JSON.parse(localStorage.getItem('cuponsUtilizados')) || [];
+
+    this.cuponsDisponiveis = this.cuponsDisponiveis.filter(cupom => {
+      if(cuponsUtilizados.find(cupomUtilizado => cupomUtilizado.id == cupom.id) === undefined) {
+        return cupom;
+      }
+    });
+
+    return this.cuponsDisponiveis;
+  }
+
+  cupomUtilizado(cupom: Cupom): void {
+    let cuponsUtilizados: Array<Cupom> = JSON.parse(localStorage.getItem('cuponsUtilizados')) || [];
+
+    cuponsUtilizados.push(cupom);
+
+    localStorage.setItem('cuponsUtilizados', JSON.stringify(cuponsUtilizados));
   }
 }
