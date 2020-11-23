@@ -13,6 +13,7 @@ import { BuscaComponent } from './components/busca/busca.component';
 import { FormsModule } from '@angular/forms';
 import { FinalizacaoComponent } from './components/finalizacao/finalizacao.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FooterComponent } from './components/footer/footer.component';
     DetalhesComponent,
     BuscaComponent,
     FinalizacaoComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

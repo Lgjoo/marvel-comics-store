@@ -1,19 +1,26 @@
 <div class="card m-3 comicContainer border-0">
-    <div class="row comicImageArea align-items-center">
-        <img class="col comicImage" [src]="comic.thumbnail.path+'.'+comic.thumbnail.extension"/>
-    </div>
-    <div class="col">
-      <div class="row justify-content-center align-items-center comicTitleArea">
-        <h5 class="card-title text-center my-1" [attr.title]="comic.title">{{comic.title}}</h5>
+  <div class="row comicImageArea align-items-center">
+    <img class="col comicImage" [src]="comic.thumbnail.path+'.'+comic.thumbnail.extension"/>
+  </div>
+  <div class="col">
+    <div class="row justify-content-center align-items-center comicTitleArea">
+      <h5 class="card-title text-center my-1" [attr.title]="comic.title"><b>{{comic.title}}</b></h5>
+      <div class="col-12 text-center">
+        <div class="raro mx-1" *ngIf="comic.raro">Raro</div>
       </div>
-      <div class="row">
-        <div class="col-lg-6 col-sm-12 text-center">
-          <a class="btn btn-outline-info mt-2" (click)="abreDetalhes(comic);">Detalhes</a>
-        </div>
-        <div class="col-lg-6 col-sm-12 text-center">
-          <a class="btn btn-outline-danger mt-2" [id]="'botaoComprarComic' + comic.id" (mouseover)="changeLabelBotaoComprar(true, $event)" (mouseout)="changeLabelBotaoComprar(false, $event)" 
-            (click)="insereCarrinho(comic);">{{variables.getPrice(comic)}}</a>
-        </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-sm-12 text-center">
+        <a class="btn btn-outline-info mt-2" (click)="abreDetalhes(comic);">Detalhes</a>
+      </div>
+      <div class="col-lg-6 col-sm-12 text-center">
+        <a class="btn btn-outline-danger mt-2" [id]="'botaoComprarComic' + comic.id" (mouseover)="changeLabelBotaoComprar(true, $event)" (mouseout)="changeLabelBotaoComprar(false, $event)" 
+          (click)="insereCarrinho(comic);">{{variables.getPrice(comic)}}</a>
       </div>
     </div>
   </div>
+</div>
+
+<ngb-alert #selfClosingAlert class="alerta text-center" *ngIf="mensagem" type="success" (closed)="mensagem = ''">
+  {{mensagem}}
+</ngb-alert>

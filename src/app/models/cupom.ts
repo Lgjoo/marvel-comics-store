@@ -1,3 +1,7 @@
+/**
+ * Modelo dos cupons
+ */
+
 export interface Cupom {
     id: number,
     raro: boolean,

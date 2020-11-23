@@ -1,5 +1,5 @@
 <div class="modal-header align-items-center">
-    <h4 class="modal-title">{{comic.title}}</h4>
+    <h4 class="modal-title"><div class="raro mx-1" *ngIf="comic.raro">Raro</div>{{comic.title}}</h4>
     <a class="close" aria-label="Close" (click)="activeModal.dismiss()">
         <i class="fas fa-times fa-lg"></i>
     </a>

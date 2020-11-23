@@ -21,3 +21,12 @@
     font-weight: 600;
     padding-right: 1em;
 }
+
+.raro {
+    display: inline-block;
+    font-size: 0.75em;
+    border: 2px #F0131E solid;
+    border-radius: 25%;
+    padding: 0.05em;
+    color: #F0131E;
+}

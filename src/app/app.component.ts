@@ -8,6 +8,9 @@ import { ComicsService } from './services/comics.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  /**
+   * Listener para monitorar o scroll e realizar o infinite loading
+   */
   @HostListener('window:scroll', ['$event'])
   onscroll(event) {
     let target = event.target.scrollingElement;

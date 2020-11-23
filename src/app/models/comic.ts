@@ -1,3 +1,7 @@
+/**
+ * Modelo das Hqs
+ */
+
 export interface Comic {
     id: number,
     digitalId: number,
