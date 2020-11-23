@@ -1,10 +1,16 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 
+@font-face {
+    font-family: 'badaboomBB';
+    src: url('./assets/fonts/BADABB__.TTF') format('truetype');
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .vermelhoMarvel {

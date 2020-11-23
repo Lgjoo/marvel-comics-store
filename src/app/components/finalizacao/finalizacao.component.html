@@ -10,7 +10,7 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title" [attr.title]="comic.title">{{comic.title}}</h5>
+                                <h5 class="card-title" [attr.title]="comic.title"><div class="raro mx-1" *ngIf="comic.raro">Raro</div>{{comic.title}}</h5>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend" id="buttonMaisMenosQuantidade">
                                         <button class="btn btn-outline-danger" type="button" (click)="mudaQuantidade(comic, comic.quantidade - 1)">-</button>
@@ -37,13 +37,13 @@
             </div>
             <div class="listaCuponsPedido p-0 m-0">
                 <div class="card mb-1" *ngFor="let cupom of cuponsPedido">
-                    <div class="card-body">
-                        <h5 class="card-title p-0 m-0">{{cupom.id}} - {{cupom.codigo}}</h5>
-                        <p class="p-0 m-0"><b>Raridade: </b>{{getRaridadeCupom(cupom.raro)}}</p>
-                        <p class="p-0 m-0"><b>Desconto: </b>{{getDescontoCupom(cupom.desconto)}}</p>
-                        <a class="btn btn-outline-danger py-1 px-2 border-0" (click)="removeCupomPedido(cupom)">
-                            <i class="fas fa-trash fa-md"></i>
-                        </a>
+                    <div class="card-body align-items-center">
+                        <p class="card-title p-0 m-0">
+                            <a class="btn btn-outline-danger py-1 px-2 border-0" (click)="removeCupomPedido(cupom)">
+                                <i class="fas fa-trash fa-md"></i>
+                            </a>
+                            {{cupom.id}} - {{cupom.codigo}}({{getRaridadeCupom(cupom.raro)}} - {{getDescontoCupom(cupom.desconto)}})
+                        </p>
                     </div>
                 </div>
             </div>
@@ -52,3 +52,7 @@
         </div>
     </div>
 </div>
+
+<ngb-alert #selfClosingAlert class="alerta text-center" *ngIf="mensagem" type="success" (closed)="mensagem = ''">
+    {{mensagem}}
+</ngb-alert>

@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ComicsService } from 'src/app/services/comics.service';
 import { VariablesService } from 'src/app/services/variables.service';
 
+/**
+ * Componente que mostra as opções de busca da aplicação
+ */
+
 @Component({
   selector: 'app-busca',
   templateUrl: './busca.component.html',
@@ -15,6 +19,9 @@ export class BuscaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Método para realizar a busca na API utilizando o título desejado
+   */
   buscarComics(): void {
     this.variables.setTituloBusca(this.tituloComic);
     this.variables.setCarregandoComics(true);

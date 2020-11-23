@@ -5,6 +5,10 @@ import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Md5 } from 'ts-md5/dist/md5';
 
+/**
+ * Serviço de controle das HQs
+ */
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,6 +27,12 @@ export class ComicsService {
     this.idTerminadoRaridade = Math.floor(Math.random() * 10);
   }
 
+  /**
+   * Método de requisição das HQs
+   * 
+   * @param titulo título a ser buscado
+   * @param offset caso esteja carregando mais HQs, seta a partir de qual deve retornar
+   */
   getComics(titulo: string = '', offset: number = 0): Observable<{data: {results: Comic[]}}> {
     let url = this.comicsUrl;
     if(titulo.length > 0) {
@@ -64,6 +74,9 @@ export class ComicsService {
     }
   }
 
+  /**
+   * Método gerador dos paramêtros necessários para comunicação com API da Marvel
+   */
   getParams(): string {
     let ts = new Date().getTime();
     let hash = Md5.hashStr(ts + this.privateKey + this.publicKey);

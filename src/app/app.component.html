@@ -1,16 +1,14 @@
 <div class="container-fluid p-0 m-0 flex-grow-1">
   <app-header></app-header>
+  <app-menu-lateral [aberto]="variables.getMenuBuscaAberto()" [lado]="'esquerda'">
+    <app-busca></app-busca>
+  </app-menu-lateral>
+  <app-menu-lateral [aberto]="variables.getMenuCarrinhoAberto()" [lado]="'direita'">
+    <app-finalizacao></app-finalizacao>
+  </app-menu-lateral>
   <div class="col">
     <div class="row justify-content-between">
-      <app-menu-lateral [aberto]="variables.getMenuBuscaAberto()" [lado]="'esquerda'">
-        <app-busca></app-busca>
-      </app-menu-lateral>
-    
       <app-listar-comics class="col m-0 mb-4 p-0"></app-listar-comics>
-  
-      <app-menu-lateral [aberto]="variables.getMenuCarrinhoAberto()" [lado]="'direita'">
-        <app-finalizacao></app-finalizacao>
-      </app-menu-lateral>
     </div>
   </div>
   <app-footer></app-footer>

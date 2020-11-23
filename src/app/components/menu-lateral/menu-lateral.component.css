@@ -1,6 +1,5 @@
 .menuLateral {
     transition: all 0.5s ease-in-out;
-    min-height: 100vh;
     height: 100%;
     width: 33vw;
     position: fixed;

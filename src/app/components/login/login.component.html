@@ -1,0 +1,31 @@
+<div class="modal-header align-items-center">
+    <h4 class="modal-title">Login</h4>
+    <a class="close" aria-label="Close" (click)="activeModal.dismiss()">
+        <i class="fas fa-times fa-lg"></i>
+    </a>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col" *ngIf="!logado">
+            <div class="input-group my-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user fa-lg"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Usuário" aria-label="Usuário" aria-describedby="basic-addon1" [(ngModel)]="usuarioLogin">
+            </div>
+            <div class="input-group my-2">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon2"><i class="fas fa-key fa-lg"></i></span>
+                </div>
+                <input type="password" class="form-control" placeholder="Senha" aria-label="Senha" aria-describedby="basic-addon2" [(ngModel)]="senhaLogin">
+            </div>
+        </div>
+        <div class="col" *ngIf="logado">
+            <h5>Olá {{usuarioLogin}}, tenha boas compras!</h5>
+        </div>
+    </div>
+</div>
+<div class="modal-footer align-items-center justify-content-center" >
+    <button type="button" class="btn btn-outline-danger" *ngIf="!logado" (click)="logarUsuario()">Entrar</button>
+    <button type="button" class="btn btn-outline-danger" *ngIf="logado" (click)="deslogarUsuario()">Sair</button>
+</div>

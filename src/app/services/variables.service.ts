@@ -4,6 +4,10 @@ import { Comic } from '../models/comic';
 import { CuponsService } from './cupons.service';
 import { Cupom } from '../models/cupom';
 
+/**
+ * Serviço de controle das variáveis
+ */
+
 @Injectable({
   providedIn: 'root'
 })
@@ -114,6 +118,9 @@ export class VariablesService {
     }
   }
 
+  /**
+   * Método para pegar os cupons disponíveis, retirando os já utilizados pelo usuário em outras compras
+   */
   getCuponsDisponiveis(): Array<Cupom> {
     let cuponsUtilizados: Array<Cupom> = JSON.parse(localStorage.getItem('cuponsUtilizados')) || [];
 
@@ -126,6 +133,11 @@ export class VariablesService {
     return this.cuponsDisponiveis;
   }
 
+  /**
+   * Método que grava o cupom utilizado na compra para não ser mais utilizado
+   * 
+   * @param cupom cupom utilizado na compra
+   */
   cupomUtilizado(cupom: Cupom): void {
     let cuponsUtilizados: Array<Cupom> = JSON.parse(localStorage.getItem('cuponsUtilizados')) || [];
 
