@@ -1,0 +1,64 @@
+{
+    "cupons": [
+        {
+            "id": "123456",
+            "raro": false,
+            "desconto": 10,
+            "codigo": "10EBOM"
+        },
+        {
+            "id": "123457",
+            "raro": false,
+            "desconto": 15,
+            "codigo": "15EBOM"
+        },
+        {
+            "id": "123458",
+            "raro": false,
+            "desconto": 20,
+            "codigo": "20EBOM"
+        },
+        {
+            "id": "123459",
+            "raro": false,
+            "desconto": 10,
+            "codigo": "10CUPOMAGORA"
+        },
+        {
+            "id": "123460",
+            "raro": false,
+            "desconto": 15,
+            "codigo": "15CUPOMAGORA"
+        },
+        {
+            "id": "123461",
+            "raro": false,
+            "desconto": 20,
+            "codigo": "20CUPOMAGORA"
+        },
+        {
+            "id": "123462",
+            "raro": false,
+            "desconto": 10,
+            "codigo": "10CUPOMNORMAL"
+        },
+        {
+            "id": "123463",
+            "raro": false,
+            "desconto": 15,
+            "codigo": "15CUPOMNORMAL"
+        },
+        {
+            "id": "123464",
+            "raro": false,
+            "desconto": 20,
+            "codigo": "20CUPOMNORMAL"
+        },
+        {
+            "id": "123465",
+            "raro": true,
+            "desconto": 50,
+            "codigo": "CUPOMRARO50"
+        }
+    ]
+}
